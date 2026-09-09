@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,228 +22,76 @@
         }
 
         .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            max-width: 800px;
-            width: 100%;
             text-align: center;
-        }
-
-        .header {
-            margin-bottom: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 100%;
         }
 
         h1 {
-            font-size: 3.5em;
-            color: #333;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 4em;
+            color: #FFD700;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.5);
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
         .subtitle {
-            color: #666;
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            color: #00FF00;
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
 
-        .game-board {
-            background: linear-gradient(to bottom, #90EE90, #228B22);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-            border: 5px solid #1a1a1a;
-            position: relative;
-            height: 400px;
+        .button-container {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 20px;
         }
 
-        .scoreboard {
-            background: #000;
-            color: #0F0;
-            padding: 15px;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .score-item {
-            display: flex;
-            justify-content: space-between;
-            margin: 5px 0;
-        }
-
-        .field {
-            flex: 1;
-            background: linear-gradient(to bottom, #7FBF7F, #228B22);
-            border: 3px dashed white;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            margin: 15px 0;
-        }
-
-        .player {
-            position: absolute;
-            width: 40px;
-            height: 60px;
-            background: #FF6B6B;
-            border-radius: 5px;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 2px solid #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-        }
-
-        .ball {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #FFA500;
-            border-radius: 50%;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 2px solid #333;
-            animation: bounce 0.5s infinite alternate;
-        }
-
-        @keyframes bounce {
-            from {
-                transform: translateX(-50%) translateY(0);
-            }
-            to {
-                transform: translateX(-50%) translateY(-20px);
-            }
-        }
-
-        .controls {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 30px 0;
-        }
-
-        button {
-            padding: 15px 20px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
+        .play-button {
+            padding: 25px 50px;
+            font-size: 1.5em;
             font-weight: bold;
-            transition: all 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
             text-transform: uppercase;
-        }
-
-        .btn-play {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF4500 100%);
             color: white;
-            font-size: 1.3em;
-            padding: 20px;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .btn-play:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
         }
 
-        .btn-play:active {
+        .play-button:active {
             transform: scale(0.98);
         }
 
-        .btn-control {
-            background: #4CAF50;
-            color: white;
-            font-size: 1em;
-        }
-
-        .btn-control:hover {
-            background: #45a049;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-        }
-
-        .btn-control:active {
-            transform: translateY(0);
-        }
-
-        .btn-pause {
-            background: #FF9800;
-            color: white;
-        }
-
-        .btn-pause:hover {
-            background: #e68900;
-        }
-
-        .btn-reset {
-            background: #f44336;
-            color: white;
-        }
-
-        .btn-reset:hover {
-            background: #da190b;
-        }
-
-        .stats {
-            background: #f5f5f5;
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #00FF00;
             padding: 20px;
             border-radius: 10px;
-            margin: 20px 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .stat-item {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 5px;
-        }
-
-        .stat-value {
-            font-size: 1.8em;
-            color: #333;
-            font-weight: bold;
-        }
-
-        .info {
-            background: #e3f2fd;
-            border-left: 4px solid #2196F3;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-            text-align: left;
-            color: #555;
+            margin-top: 40px;
+            color: #00FF00;
+            font-size: 1.1em;
             line-height: 1.6;
         }
 
-        .info h3 {
-            color: #1976D2;
-            margin-bottom: 10px;
-        }
-
-        .footer {
-            margin-top: 30px;
-            color: #999;
-            font-size: 0.9em;
+        .emoji {
+            font-size: 1.2em;
+            margin: 0 5px;
         }
 
         @media (max-width: 600px) {
@@ -251,215 +99,37 @@
                 font-size: 2.5em;
             }
 
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .play-button {
+                padding: 20px 40px;
+                font-size: 1.2em;
+            }
+
             .container {
-                padding: 20px;
-            }
-
-            .game-board {
-                height: 300px;
-                padding: 20px;
-            }
-
-            .controls {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
+                padding: 40px 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🏈 RETRO BOWL</h1>
-            <p class="subtitle">Lead your team to glory!</p>
+        <h1>🏈 RETRO BOWL 🏈</h1>
+        <p class="subtitle">Lead your team to championship glory!</p>
+
+        <div class="button-container">
+            <a href="https://poki.com/en/g/retro-bowl" class="play-button" target="_blank">
+                ▶ PLAY NOW
+            </a>
         </div>
 
-        <div class="game-board">
-            <div class="scoreboard">
-                <div class="score-item">
-                    <span>Your Score:</span>
-                    <span id="userScore">0</span>
-                </div>
-                <div class="score-item">
-                    <span>Opponent:</span>
-                    <span id="oppScore">0</span>
-                </div>
-                <div class="score-item">
-                    <span>Quarter:</span>
-                    <span id="quarter">1</span>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="ball"></div>
-                <div class="player">🏃</div>
-            </div>
-        </div>
-
-        <div class="controls">
-            <button class="btn-play" onclick="startGame()">▶ PLAY GAME</button>
-            <button class="btn-control" onclick="passPlay()">📤 PASS</button>
-            <button class="btn-control" onclick="runPlay()">🏃 RUN</button>
-            <button class="btn-pause" onclick="pauseGame()">⏸ PAUSE</button>
-            <button class="btn-reset" onclick="resetGame()">🔄 RESET</button>
-        </div>
-
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-label">Touchdowns</div>
-                <div class="stat-value" id="tdCount">0</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-label">Total Plays</div>
-                <div class="stat-value" id="playCount">0</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-label">Win Streak</div>
-                <div class="stat-value" id="winStreak">0</div>
-            </div>
-        </div>
-
-        <div class="info">
-            <h3>🎮 How to Play</h3>
-            <p>
-                <strong>PASS:</strong> Throw the ball downfield for quick gains!<br>
-                <strong>RUN:</strong> Power through the defense for steady progress!<br><br>
-                Score touchdowns (6 points) to win games. Build your winning streak and become a legend!
-                Each quarter lasts 5 plays. Lead your team to victory in the Retro Bowl!
-            </p>
-        </div>
-
-        <div class="footer">
-            <p>🎯 Retro Bowl on Poki | Made with ❤️ for Retro Gaming Fans</p>
+        <div class="info-box">
+            <p><span class="emoji">🎮</span> Click the button above to play Retro Bowl on Poki.com</p>
+            <p><span class="emoji">📱</span> Works on desktop, tablet, and mobile devices</p>
+            <p><span class="emoji">⭐</span> No download required - play instantly in your browser!</p>
         </div>
     </div>
-
-    <script>
-        let gameState = {
-            userScore: 0,
-            oppScore: 0,
-            quarter: 1,
-            touchdowns: 0,
-            plays: 0,
-            winStreak: 0,
-            isGameActive: false,
-            yardsNeeded: 100
-        };
-
-        function startGame() {
-            gameState.isGameActive = true;
-            gameState.userScore = 0;
-            gameState.oppScore = 0;
-            gameState.quarter = 1;
-            gameState.plays = 0;
-            gameState.yardsNeeded = 100;
-            updateDisplay();
-            alert('🏈 Game Started! Drive down the field and score touchdowns!');
-        }
-
-        function passPlay() {
-            if (!gameState.isGameActive) {
-                alert('Start the game first!');
-                return;
-            }
-
-            const gain = Math.floor(Math.random() * 30) + 5;
-            gameState.yardsNeeded -= gain;
-            gameState.plays++;
-
-            if (gameState.yardsNeeded <= 0) {
-                gameState.userScore += 6;
-                gameState.touchdowns++;
-                gameState.yardsNeeded = 100;
-                alert(`🎉 TOUCHDOWN! You scored 6 points!\nPass Yards: ${gain}`);
-            } else {
-                alert(`📤 Pass Complete!\n+${gain} yards\nYards to TD: ${Math.max(gameState.yardsNeeded, 0)}`);
-            }
-
-            simulateOpponentPlay();
-            updateDisplay();
-            checkGameEnd();
-        }
-
-        function runPlay() {
-            if (!gameState.isGameActive) {
-                alert('Start the game first!');
-                return;
-            }
-
-            const gain = Math.floor(Math.random() * 20) + 3;
-            gameState.yardsNeeded -= gain;
-            gameState.plays++;
-
-            if (gameState.yardsNeeded <= 0) {
-                gameState.userScore += 6;
-                gameState.touchdowns++;
-                gameState.yardsNeeded = 100;
-                alert(`🎉 TOUCHDOWN! You scored 6 points!\nRun Yards: ${gain}`);
-            } else {
-                alert(`🏃 Run Successful!\n+${gain} yards\nYards to TD: ${Math.max(gameState.yardsNeeded, 0)}`);
-            }
-
-            simulateOpponentPlay();
-            updateDisplay();
-            checkGameEnd();
-        }
-
-        function simulateOpponentPlay() {
-            if (Math.random() > 0.6) {
-                gameState.oppScore += 3;
-                alert('😢 Opponent scores a field goal! (3 points)');
-            }
-        }
-
-        function pauseGame() {
-            gameState.isGameActive = false;
-            alert('⏸ Game Paused');
-        }
-
-        function resetGame() {
-            if (gameState.userScore > gameState.oppScore && gameState.plays > 0) {
-                gameState.winStreak++;
-            }
-            gameState.userScore = 0;
-            gameState.oppScore = 0;
-            gameState.quarter = 1;
-            gameState.plays = 0;
-            gameState.isGameActive = false;
-            gameState.yardsNeeded = 100;
-            updateDisplay();
-            alert('🔄 Game Reset');
-        }
-
-        function checkGameEnd() {
-            if (gameState.quarter >= 4 && gameState.plays >= 20) {
-                gameState.isGameActive = false;
-                if (gameState.userScore > gameState.oppScore) {
-                    gameState.winStreak++;
-                    alert(`🏆 YOU WIN! ${gameState.userScore} - ${gameState.oppScore}\nWin Streak: ${gameState.winStreak}`);
-                } else {
-                    gameState.winStreak = 0;
-                    alert(`😢 YOU LOSE! ${gameState.userScore} - ${gameState.oppScore}\nWin Streak Reset!`);
-                }
-            } else if (gameState.plays % 5 === 0 && gameState.plays > 0) {
-                gameState.quarter = Math.min(4, Math.floor(gameState.plays / 5) + 1);
-            }
-        }
-
-        function updateDisplay() {
-            document.getElementById('userScore').textContent = gameState.userScore;
-            document.getElementById('oppScore').textContent = gameState.oppScore;
-            document.getElementById('quarter').textContent = gameState.quarter;
-            document.getElementById('tdCount').textContent = gameState.touchdowns;
-            document.getElementById('playCount').textContent = gameState.plays;
-            document.getElementById('winStreak').textContent = gameState.winStreak;
-        }
-
-        // Initialize display on page load
-        updateDisplay();
-    </script>
 </body>
 </html>
